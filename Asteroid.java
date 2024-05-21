@@ -14,7 +14,6 @@ public class Asteroid extends SmoothMover
     /** When the stability reaches 0 the asteroid will explode */
     private int stability;
 
-
     /**
      * Create an asteroid with default size and random direction of movement.
      */
@@ -58,6 +57,7 @@ public class Asteroid extends SmoothMover
             getWorld().addObject(new Explosion(), getX(), getY());
             getWorld().removeObject(rkt);
             ((Space)getWorld()).gameOver();
+            Greenfoot.playSound("overforyou.wav");
         }
     }
 
